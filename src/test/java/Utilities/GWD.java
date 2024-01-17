@@ -69,11 +69,8 @@ public class GWD {
                     System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
                     ChromeOptions optChrome = new ChromeOptions();
                     //   opt.setBinary("C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"); Deze en de bovenste zijn voor Brave browser
-                     optChrome.addArguments("--headless=new","--no-sandbox","--disable-dev-shm-usage","--disable-gpu","--window-size=7680,4320");
-                    //optChrome.addArguments("--headless=new");
+                    optChrome.addArguments("--headless=new","--no-sandbox","--disable-dev-shm-usage","--disable-gpu","--window-size=7680,4320");
                     optChrome.addArguments("--lang=nl");
-
-
                     threadDriver.set(new ChromeDriver(optChrome));
                 }
                 break;
