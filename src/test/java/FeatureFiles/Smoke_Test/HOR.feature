@@ -1,6 +1,6 @@
-@Smoketest
+@Smoketesta
 
-Feature: Smoke Test FK
+Feature: Smoke Test HOR
 
   Scenario: Dit is een Smoke test voor HOR
     Given Ga naar "horizonscangeneesmiddelen.nl/?lang=nl"
