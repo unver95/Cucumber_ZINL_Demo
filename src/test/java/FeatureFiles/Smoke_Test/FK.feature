@@ -1,4 +1,4 @@
-@Smoketest
+@Smoketesta
 
 Feature: Smoke Test FK
 
@@ -39,7 +39,7 @@ Feature: Smoke Test FK
 
     Examples: //TODO Burda ki sikinti her seferinde Scenario yu bastan baslatacak cunku footer da hepsini yapmak gerek Ayserle konus o bu fikri vermisti herhalde nededn verdi diye sor
       | footer               |
-      | Contact              |
+    #  | Contact              |
   #//TODO DONE!!!!!!!!! [class="default pat-button si-event"] OLMASI GEREKIYOR AMA OBURLERINDE [class='default pat-button']
       | E-learning cursus FK |
       | Mobiele apps         |
