@@ -70,6 +70,9 @@ public class GWD {
                     ChromeOptions optChrome = new ChromeOptions();
                     //   opt.setBinary("C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"); Deze en de bovenste zijn voor Brave browser
                     optChrome.addArguments("--lang=nl");
+                    optChrome.addArguments("--headless","--no-sandbox","--disable-dev-shm-usage","--disable-gpu","--window-size=1400,2400");
+
+
                     threadDriver.set(new ChromeDriver());
                 }
                 break;
