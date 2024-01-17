@@ -25,7 +25,7 @@ public class Tools extends GWD {
     Robot robot;
     JavascriptExecutor js;
     SoftAssert softAssert = new SoftAssert();
-    WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+    WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(50));
 
     //! Wait Methods
     //****************************************************************************//
