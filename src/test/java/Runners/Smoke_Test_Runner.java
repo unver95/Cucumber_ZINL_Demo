@@ -10,7 +10,7 @@ import org.testng.annotations.AfterClass;
         features = {"src/test/java/Generiek/Generiek_FeatureFiles",
                 "src/test/java/FeatureFiles"},
         glue = {"StepDefinitions", "Generiek.Generiek_StepDefinitions"},
-        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+        plugin = {"pretty","json:target/cucumber/cucumber.json","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 
 public class Smoke_Test_Runner extends AbstractTestNGCucumberTests {
