@@ -1,4 +1,4 @@
-@Smoketest
+@Smoketesta
 
 Feature: Smoke Test VZIZ
 
@@ -25,11 +25,13 @@ Feature: Smoke Test VZIZ
       | footer               |
       | Contact              |
   #//TODO DONE!!!!!!!!! yey FK icin bak, contact formulier stuur olmuyor
-  #    | Toelichting          |
-  #    | Archief              |
-  #    | Copyright            |
-  #    | Privacy              |
-  #    | Cookies              |
-  #    | Toegankelijkheid     |
-  #    | Kwetsbaarheid melden |
-  #    | Kwaliteitstaken      |
+      | Toelichting          |
+      | Archief              |
+
+
+      | Copyright            |
+      | Privacy              |
+      | Cookies              |
+      | Toegankelijkheid     |
+      | Kwetsbaarheid melden |
+      | Kwaliteitstaken      |
