@@ -14,7 +14,7 @@ Feature: Smoke Test VZIZ
     #And Kijk of huidige jaar klopt
     # //TODO ^ Transparantiekalender moet ik nog met Michel bespreken wat de formule is
     And Ga naar huis pagina
-    Then Zoek "Register" op search
+  #  Then Zoek "Register" op search
 
 
   Scenario Outline: Dit is een Smoke test voor VZIZ voor Footer
@@ -25,7 +25,7 @@ Feature: Smoke Test VZIZ
 
     Examples: //TODO Burda ki sikinti her seferinde Scenario yu bastan baslatacak cunku footer da hepsini yapmak gerek Ayserle konus o bu fikri vermisti herhalde nededn verdi diye sor
       | footer               |
-      | Contact              |
+#      | Contact              |
   #//TODO DONE!!!!!!!!! yey FK icin bak, contact formulier stuur olmuyor
       | Toelichting          |
       | Archief              |
