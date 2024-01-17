@@ -1,5 +1,6 @@
 package Utilities;
 
+import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -13,7 +14,6 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 
 public class GWD {
 
@@ -69,11 +69,12 @@ public class GWD {
                     System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
                     ChromeOptions optChrome = new ChromeOptions();
                     //   opt.setBinary("C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"); Deze en de bovenste zijn voor Brave browser
+                     optChrome.addArguments("--headless=new","--no-sandbox","--disable-dev-shm-usage","--disable-gpu","--window-size=7680,4320");
+                    //optChrome.addArguments("--headless=new");
                     optChrome.addArguments("--lang=nl");
-                    optChrome.addArguments("--headless","--no-sandbox","--disable-dev-shm-usage","--disable-gpu","--window-size=7680,4320");
 
 
-                    threadDriver.set(new ChromeDriver());
+                    threadDriver.set(new ChromeDriver(optChrome));
                 }
                 break;
             }
@@ -99,3 +100,4 @@ public class GWD {
         }
     }
 }
+
