@@ -1,5 +1,6 @@
 @Smoketesta
 
+
 Feature: Smoke Test MED
 
   Scenario: Dit is een Smoke test voor MED
