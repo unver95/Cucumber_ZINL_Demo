@@ -2,7 +2,6 @@ package Generiek.Generiek_Pages;
 
 import Utilities.GWD;
 import lombok.Getter;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,5 +21,7 @@ public class Generiek_GlobalNav {
     @FindBy(css = "[id=\"global-nav\"]")
     private WebElement globalNav;
     @FindBy(css = "[type=\"submit\"]")
-    private WebElement globalSearch;
+    private WebElement globalSearchSubmit;
+    @FindBy(css = "[id=\"global-search-lemma\"]")
+    private WebElement globalSearchTextField;
 }

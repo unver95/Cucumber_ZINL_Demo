@@ -11,7 +11,6 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 public class Generiek_GlobalNav_Steps {
@@ -47,7 +46,7 @@ public class Generiek_GlobalNav_Steps {
     public void zoekOpOpSearch(String zoekText) {
         if (!GWD.getDriver().getCurrentUrl().contains("farmacotherapeutischkompas")) {
             if (!gh.getLogin().getText().contains("Ingelogd als")) {
-                ts.clickElement_Tools(ggn.getGlobalSearch());
+                ts.clickElement_Tools(ggn.getGlobalSearchSubmit());
                 try {
                     Thread.sleep(2000); //Todo Burda bunu kullanma nedeni biraz beklemesi gerek
                 } catch (InterruptedException e) {
@@ -63,8 +62,8 @@ public class Generiek_GlobalNav_Steps {
                 }
             } else {
                 ts.scrollBrowserAllTheWayUp();
-                ts.clickElementFromDOM_Tools(ggn.getGlobalSearch());
-                ts.clickElement_Tools(ggn.getGlobalSearch());
+                ts.clickElementFromDOM_Tools(ggn.getGlobalSearchSubmit());
+                ts.clickElement_Tools(ggn.getGlobalSearchSubmit());
                 try {
                     Thread.sleep(1000); //Todo Burda bunu kullanma nedeni biraz beklemesi gerek
                 } catch (InterruptedException e) {
@@ -78,7 +77,7 @@ public class Generiek_GlobalNav_Steps {
                 }
             }
         } else { // else is voor FK
-            ts.sendKeysElement_Tools(ggn.getGlobalSearch(), zoekText);
+            ts.sendKeysElement_Tools(ggn.getGlobalSearchTextField(), zoekText);
             ts.robot_Press_Enter_Tools();
         }
     }
