@@ -45,7 +45,6 @@ public class Generiek_GlobalNav_Steps {
 
     @And("Zoek {string} op search")
     public void zoekOpOpSearch(String zoekText) {
-
         if (!GWD.getDriver().getCurrentUrl().contains("farmacotherapeutischkompas")) {
             if (!gh.getLogin().getText().contains("Ingelogd als")) {
                 ts.clickElement_Tools(ggn.getGlobalSearch());
@@ -58,10 +57,13 @@ public class Generiek_GlobalNav_Steps {
                 if (GWD.getDriver().getCurrentUrl().contains("medicijnkosten")) {
                     ts.sendKeysElement_Tools(gfc.getZoekTrefwoordVoorMedicijnkosten(), zoekText);
                 } else {
+                    System.out.println(123);
                     ts.sendKeysElement_Tools(gfc.getZoekTrefwoord(), zoekText);
                     ts.robot_Press_Enter_Tools();
                 }
             } else {
+                ts.scrollBrowserAllTheWayUp();
+                ts.clickElementFromDOM_Tools(ggn.getGlobalSearch());
                 ts.clickElement_Tools(ggn.getGlobalSearch());
                 try {
                     Thread.sleep(1000); //Todo Burda bunu kullanma nedeni biraz beklemesi gerek
@@ -71,7 +73,7 @@ public class Generiek_GlobalNav_Steps {
                 ts.robot_Press_Enter_Tools();
                 if (GWD.getDriver().getCurrentUrl().contains("medicijnkosten")) {
                     ts.sendKeysElement_Tools(gfc.getZoekTrefwoordVoorMedicijnkosten(), zoekText);
-                }else {
+                } else {
                     ts.sendKeysElement_Tools(gfc.getZoekTrefwoord(), zoekText);
                 }
             }
@@ -116,7 +118,7 @@ public class Generiek_GlobalNav_Steps {
     @Then("Kies {string} van uit {string}") //TODO Bunun Global Nav da isi ne baska yere koymak lazim bence
     public void kiesVanUit(String value, String select) {
         ts.waitUntilSiteIsFullLoaded();
-        WebElement selectElement = GWD.getDriver().findElement(By.xpath("//select[@name='"+select+"']"));
+        WebElement selectElement = GWD.getDriver().findElement(By.xpath("//select[@name='" + select + "']"));
         ts.waitUntilElementToBeVisible_Tools(selectElement);
         Select select1 = new Select(selectElement);
         select1.selectByValue(value);

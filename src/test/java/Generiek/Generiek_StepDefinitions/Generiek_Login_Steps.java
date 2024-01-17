@@ -58,9 +58,10 @@ public class Generiek_Login_Steps {
         ts.sendKeysElement_Tools(gl.getPasswordGeneriek(), wachtwoord);
     }
 
-    @And("Klik op in log")
+    @And("Klik op in log") // De log in knop op de log in pagina
     public void klikOpInLog() {
-        ts.clickElementFromDOM_Tools(gl.getLoginGeneriek());
+        ts.clickElement_Tools(gl.getLoginGeneriek());
+      //ts.clickElementFromDOM_Tools(gl.getLoginGeneriek());
     }
 
     @Then("\\(Ingelogd als) moet zichtbaar zijn op de header")

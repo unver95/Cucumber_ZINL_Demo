@@ -21,6 +21,6 @@ public class Generiek_GlobalNav {
     private WebElement submit;
     @FindBy(css = "[id=\"global-nav\"]")
     private WebElement globalNav;
-    @FindBy(css = "[id=\"global-search-lemma\"]")
+    @FindBy(css = "[type=\"submit\"]")
     private WebElement globalSearch;
 }

@@ -15,14 +15,15 @@ public class Generiek_Login {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
+    @FindBy(css = "[class*=\"default pat-button\"]")
+    private WebElement loginGeneriek;
+
     @FindBy(id = "username")
     private WebElement usernameGeneriek;
 
     @FindBy(id = "password")
     private WebElement passwordGeneriek;
 
-    @FindBy(css = "[class*=\"default pat-button\"]")
-    private WebElement loginGeneriek;
 
     /*        public void generiekLoginFindAndClick(String strElement) {
             switch (strElement) {

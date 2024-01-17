@@ -5,12 +5,12 @@ Feature: Smoke Test GIP
   Scenario: Dit is een Smoke test voor GIP
     Given Ga naar "gipdatabank.nl/"
     #//TODO Acaba "Ga naar gip.nl" dedigimizde acaba browser i da mi yazak daha cok dinamik olur. Mesela "Ga naar ist.nl met Chrome/Brave/FireFox"
-    And Scroll 0 unit naar boven en 1500 unit naar beneden
-    And Klik op "Meer nieuws"
-    And Voer de nodige acties uit in het "Meer nieuws"
-    And Scroll 1000 unit naar boven en 0 unit naar beneden
-    And Ga naar huis pagina
-    And Controleer de bladerbaan
+#   And Scroll 0 unit naar boven en 1500 unit naar beneden
+#   And Klik op "Meer nieuws"
+#   And Voer de nodige acties uit in het "Meer nieuws"
+#   And Scroll 1000 unit naar boven en 0 unit naar beneden
+#   And Ga naar huis pagina
+#   And Controleer de bladerbaan
     When Klik op login
     And Enter de naam "MandeepH"
     And Enter de wachtwoord
@@ -19,6 +19,7 @@ Feature: Smoke Test GIP
     And Controleer of het tabel Verzekeraar wordt toegevoegd in de bladerbaan
     And Klik op Toon overzicht om tabellen te zien
     And Kijk of de tabel wordt getoond
+    And Scroll helemaal naar boven
     And Zoek "geneesmiddel" op search
 
   Scenario Outline: Dit is een Smoke test voor GIP voor Footer

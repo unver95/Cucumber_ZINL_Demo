@@ -11,7 +11,6 @@ Feature: Smoke Test FK
     And Ga naar huis pagina
     When Controleer de eerste link op Toptask view
     And Ga naar huis pagina
-
     When Klik op login
     And Enter de naam "MandeepH"
     And Enter de wachtwoord
