@@ -61,7 +61,8 @@ public class Generiek_Steps {
                 if (GWD.getDriver().getCurrentUrl().contains("istandaarden")) {
                     ts.sendKeysElement_Tools(gfc.getTelefoonContactFormulier(), "+31 0000000");
                 } else {
-                    ts.scrollBrowserUp(5100);
+                    ts.scrollBrowserAllTheWayUp();
+                    System.out.println("Buraya girdi");
                     ts.clickElement_Tools(gfc.getProfessionalContactFormulierRadioButton());
                     ts.sendKeysElement_Tools(gfc.getFunctieContactFormulier(), "Testing de pagina");
                 }

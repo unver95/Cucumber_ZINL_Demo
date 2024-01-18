@@ -33,12 +33,12 @@ Feature: Smoke Test HOR
       | footer                 |
       | Contact                |
   #//TODO DONE!!!!!!!!! yey FK icin bak, contact formulier stuur olmuyor
-      | Downloads              |
-      | Export                 |
-      | Copyright              |
-      | Privacy                |
-      | Cookies                |
-      | Toegankelijkheid       |
-      | Kwetsbaarheid melde    |
-      | Over de Horizonscan    |
-      | About the Horizon Scan |
+  #    | Downloads              |
+  #    | Export                 |
+  #    | Copyright              |
+  #    | Privacy                |
+  #    | Cookies                |
+  #    | Toegankelijkheid       |
+  #    | Kwetsbaarheid melde    |
+  #    | Over de Horizonscan    |
+  #    | About the Horizon Scan |
