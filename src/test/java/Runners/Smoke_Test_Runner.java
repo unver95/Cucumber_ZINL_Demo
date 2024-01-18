@@ -6,11 +6,11 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterClass;
 
 @CucumberOptions(
-        tags = "@Smoketest",
+        tags = "@Smoketesta",
         features = {"src/test/java/Generiek/Generiek_FeatureFiles",
                 "src/test/java/FeatureFiles"},
         glue = {"StepDefinitions", "Generiek.Generiek_StepDefinitions"},
-        plugin = {"pretty", "json:target/cucumber/cucumber.json", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+        plugin = {"pretty", "json:target/cucumber/cucumberReport.json", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 
 public class Smoke_Test_Runner extends AbstractTestNGCucumberTests {
