@@ -71,13 +71,11 @@ public class GWD {
                     //   opt.setBinary("C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"); Deze en de bovenste zijn voor Brave browser
                     optChrome.addArguments("--lang=nl");
                     System.out.println("Before check for Intelij");
-                    if (!runningFromIntelij()) {
+                    if (runningFromIntelij()) {
                         optChrome.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=7680,4320");
                         System.out.println("Running from Jenkins");
-                        threadDriver.set(new ChromeDriver(optChrome));
-                    } else {
-                        threadDriver.set(new ChromeDriver(optChrome));
                     }
+                    threadDriver.set(new ChromeDriver(optChrome));
                 }
                 break;
             }
