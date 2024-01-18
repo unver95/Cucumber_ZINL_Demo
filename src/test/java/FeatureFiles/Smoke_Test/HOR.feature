@@ -25,7 +25,7 @@ Feature: Smoke Test HOR
   Scenario Outline: Dit is een Smoke test voor HOR voor Footer
     Given Ga naar "horizonscangeneesmiddelen.nl/?lang=nl"
     And Scroll helemaal naar beneden
-    And Klik op "<footer>"
+    Then Klik op "<footer>"
     Then Voer de nodige acties uit in het "<footer>"
 
 

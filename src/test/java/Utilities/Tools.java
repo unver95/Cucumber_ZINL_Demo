@@ -79,6 +79,11 @@ public class Tools extends GWD {
     }
 
     public void scrollBrowserAllTheWayUp() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         js = (JavascriptExecutor) getDriver();
         js.executeScript("window.scrollTo(0, 0)");
     }
