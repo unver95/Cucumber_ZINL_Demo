@@ -69,8 +69,12 @@ public class GWD {
                     System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
                     ChromeOptions optChrome = new ChromeOptions();
                     //   opt.setBinary("C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"); Deze en de bovenste zijn voor Brave browser
-                    optChrome.addArguments("--headless=new","--no-sandbox","--disable-dev-shm-usage","--disable-gpu","--window-size=7680,4320");
                     optChrome.addArguments("--lang=nl");
+                    System.out.println("Before check for Intelij");
+                    if (!runningFromIntelij()) {
+                        optChrome.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=7680,4320");
+                        System.out.println("Running from Jenkins");
+                    }
                     threadDriver.set(new ChromeDriver(optChrome));
                 }
                 break;
@@ -78,6 +82,11 @@ public class GWD {
         }
         threadDriver.get().manage().window().maximize();
         return threadDriver.get();
+    }
+
+    public static boolean runningFromIntelij() { //TODO Sunuma ekle: Burda bakiyor intelij de mi calisiyor diye
+        String classPath = System.getProperty("java.class.path");
+        return classPath.contains("idea_rt.jar");
     }
 
 
@@ -90,7 +99,7 @@ public class GWD {
         }
 
         if (threadDriver.get() != null) {
-         //   threadDriver.get().quit();
+            //   threadDriver.get().quit();
             WebDriver driver = threadDriver.get();
             driver = null;
             threadDriver.set(driver);
