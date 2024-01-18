@@ -71,6 +71,11 @@ public class GWD {
                     //   opt.setBinary("C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"); Deze en de bovenste zijn voor Brave browser
                     optChrome.addArguments("--lang=nl");
                     System.out.println("Before check for Intelij");
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
                     if (!runningFromIntelij()) {
                         optChrome.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=7680,4320");
                         System.out.println("Running from Jenkins");
@@ -88,6 +93,11 @@ public class GWD {
     }
 
     public static boolean runningFromIntelij() { //TODO Sunuma ekle: Burda bakiyor intelij de mi calisiyor diye
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         String classPath = System.getProperty("java.class.path");
         System.out.println(classPath.contains("idea_rt.jar"));
         return classPath.contains("idea_rt.jar");

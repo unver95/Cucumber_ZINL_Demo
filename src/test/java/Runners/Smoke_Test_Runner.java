@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterClass;
 
 @CucumberOptions(
-        tags = "@Smoketest",
+        tags = "@a",
         features = {"src/test/java/Generiek/Generiek_FeatureFiles",
                 "src/test/java/FeatureFiles"},
         glue = {"StepDefinitions", "Generiek.Generiek_StepDefinitions"},
