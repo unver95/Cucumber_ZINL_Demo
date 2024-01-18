@@ -1,4 +1,4 @@
-@SmokeTest @RegressionTest
+@Smoketest @RegressionTest
 
 Feature: Smoke Test FK
 
