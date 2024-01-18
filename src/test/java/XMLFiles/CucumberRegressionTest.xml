@@ -5,7 +5,7 @@
         <parameter name="browser" value="Firefox"></parameter>
         <parameter name="browser" value="Chorme"></parameter>
         <classes>
-        <class name="Runners.Smoke_Test_Runner"> </class>
+        <class name="Runners.Regression_Test_Runner"> </class>
         </classes>
     </test>
 </suite>
