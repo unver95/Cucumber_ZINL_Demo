@@ -12,7 +12,7 @@ public class Hooks {
     Tools ts = new Tools();
 
     @Before
-    public void beforae() {
+    public void before() {
         System.out.println("De test is gestart..");
     }
 

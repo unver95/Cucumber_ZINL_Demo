@@ -77,7 +77,7 @@ public class GWD {
                         throw new RuntimeException(e);
                     }
                     if (!runningFromIntelij()) {
-                     //   optChrome.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=7680,4320");
+                        optChrome.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=7680,4320");
                         System.out.println("Running from Jenkins");
                         threadDriver.set(new ChromeDriver(optChrome));
                     } else {
