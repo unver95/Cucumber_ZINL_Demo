@@ -1,4 +1,4 @@
-@Smoketesta
+@Smoketestaz
 
 Feature: Smoke Test VZIZ
 
