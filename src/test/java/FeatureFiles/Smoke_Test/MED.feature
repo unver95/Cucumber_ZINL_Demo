@@ -1,4 +1,4 @@
-@Smoketest
+@Smoketestas
 
 Feature: Smoke Test MED
 
