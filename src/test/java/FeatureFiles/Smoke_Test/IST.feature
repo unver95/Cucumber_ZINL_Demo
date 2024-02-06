@@ -1,4 +1,4 @@
-@Smoketesta
+@Smoketest
 
 Feature: Smoke Test IST
 # //TODO FK ICIN TEKRARDAN TEST YAOILMASI GEREK YAPMAYI UNUTTUM O SITEYI

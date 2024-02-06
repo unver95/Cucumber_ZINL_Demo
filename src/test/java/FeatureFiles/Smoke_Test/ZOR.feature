@@ -1,4 +1,4 @@
-@Smoketesta
+@Smoketest
 
 Feature: Smoke Test ZOR
 
