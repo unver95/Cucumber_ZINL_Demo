@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test name="Smoke test">
+    <test name="Smoke test demo voor team">
         <classes>
         <class name="Runners.Smoke_Test_Runner"> </class>
         </classes>
