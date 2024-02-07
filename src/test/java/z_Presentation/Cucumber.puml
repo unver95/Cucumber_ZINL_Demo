@@ -3,9 +3,9 @@
 
 
 package XMLFiles{
-class CucumberSmokeTest
-note left: "xml"
 class CucumberRegressionTest
+note left: "xml"
+class CucumberSmokeTest
 note left: "xml"
 }
 
@@ -18,8 +18,8 @@ class Regression_Test_Runner{
 }
 }
 
-CucumberSmokeTest --> Regression_Test_Runner
-CucumberRegressionTest --> Smoke_Test_Runner
+CucumberSmokeTest --> Smoke_Test_Runner
+CucumberRegressionTest --> Regression_Test_Runner
 
 package FeatureFiles{
 package FK{}
@@ -34,7 +34,7 @@ package Smoke_Test{
 package FKa{
 
 class feautreFile{
-{static} @Smoketest @RegressionTest
+{static} @Smoketest
 }
 }
 package VZIZa{
@@ -42,8 +42,16 @@ class feautreFile{
 {static} @Smoketest @RegressionTest
 }
 }
-package GIPa{}
-package HORa{}
+package GIPa{
+class feautreFile{
+{static} @JBDC
+}
+}
+package HORa{
+class feautreFile{
+{static} @ApachePOI
+}
+}
 package ISTa{}
 package MEDa{}
 package ZORa{}
