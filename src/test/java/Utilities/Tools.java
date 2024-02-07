@@ -41,14 +41,16 @@ public class Tools extends GWD {
         wait.until(ExpectedConditions.visibilityOf(element));
         Assert.isTrue(element.isDisplayed(), "The element wasn't displayed");
     }
-
+//TODO ToBe => is
 
     public void waitUntilElementToBeInvisible_Tools(WebElement element) {
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
+
     public void waitUntilElementContainsText_Tools(WebElement element, String text) {
         wait.until(ExpectedConditions.textToBePresentInElement(element, text));
     }
+
     public void waitUntilElementDoesNotContainsText_Tools(WebElement element, String text) {
         wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element, text)));
     }
@@ -121,13 +123,12 @@ public class Tools extends GWD {
 
         while (true) {
             List<WebElement> cookies = GWD.getDriver().findElements(By.cssSelector("[class=\"cookiewarning clearfix\"]"));
-            if (cookies.isEmpty()) {
-                break; // Eğer liste boşsa, döngüyü sonlandır
-            } else {
+            if (!cookies.isEmpty()) {
                 WebElement cookie = cookies.get(0);
                 js.executeScript("arguments[0].parentNode.removeChild(arguments[0]);", cookie);
+                break; // Eğer liste boşsa, döngüyü sonlandır
             }
-        }
+        } // TODO History den karslastir eskiyle try catch e de bak gerekir mi diye
     }
 
     public void clickElement_Tools(WebElement element) {
@@ -167,7 +168,11 @@ public class Tools extends GWD {
             scrollToElement_Tools(element);
             element.clear();
             element.sendKeys(value);
-        } catch (Exception ingore) {
+        } catch (StaleElementReferenceException e) {
+            //TODO
+            System.out.println(e);
+        } catch (Exception message) {
+            System.out.println(message.getMessage());
             waitUntilElementToBeVisible_Tools(element);
             scrollToElement_Tools(element);
             //js.executeScript("arguments[0].scrollIntoView(true);", element);
@@ -176,6 +181,7 @@ public class Tools extends GWD {
         }
     }
 
+    //TODO _ sil
     public void verifyElementContainsText_Tools(WebElement element, String text) {
         Assert.isTrue(element.getText().toLowerCase().contains(text.toLowerCase()), "Doesn't contains: " + text);
     }
@@ -213,8 +219,7 @@ public class Tools extends GWD {
             Color color = Color.fromString(c);
             String rgb = color.asRgb();
             Assert.isTrue(rgb.equals(colorCode), "De kleur komt niet overeen, Actual color is: " + rgb);
-        }
-        catch (StaleElementReferenceException e){
+        } catch (StaleElementReferenceException e) {
             //waitUntilStalenessOfElement_Tools(element);
             System.out.println("Color Check staleness");
             String c = element.getCssValue("background-color");
@@ -275,7 +280,7 @@ public class Tools extends GWD {
         if (!Objects.equals(element.getAttribute("data-value"), text)) {
             sendKeysElement_Tools(element, text);
             recursiveFunction_Tools(element, text);
-        }
+        } //TODO DO WHILE yap dev oyle dedi Sena yla konus
     }
 
     public void switchNextTab() {
@@ -337,6 +342,8 @@ public class Tools extends GWD {
         System.out.println("Bestand Path: " + fullPath);
         return fullPath;
     }
+    //TODO Log => log4J
+
 
     public void robot_Clipboard_Paste_Enter_Tools(String path) {
         StringSelection selection = new StringSelection(path);
