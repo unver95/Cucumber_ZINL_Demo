@@ -3,22 +3,19 @@
 
 start
 
-
 :Jenkins;
-->//Invoke top-level Maven targets =>//
-     //clean test -P Smoke_Test//;
+note right: Invoke top-level Maven targets clean test -P Smoke_Test
 
 :pom.xml(profiles);
-->//  <id>Smoke_Test</id> //;
+note right: <id>Smoke_Test</id>
 
 :CucumberSmokeTest.xml;
-->// <class name="Runners.Smoke_Test_Runner"> </class>//;
+note right: <class name="Runners.Smoke_Test_Runner"> </class>
 
 :Smoke_Test_Runner;
-->//tags = "@Smoketest"//;
+note right: tags = "@Smoketest"
 
 :FeatureFiles, Generiek_FeatureFiles;
-
 
 stop
 

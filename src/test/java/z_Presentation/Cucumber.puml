@@ -1,0 +1,85 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+package XMLFiles{
+class CucumberSmokeTest
+note left: "xml"
+class CucumberRegressionTest
+note left: "xml"
+}
+
+package Runners{
+class Smoke_Test_Runner{
+{static} tags = "@Smoketest
+}
+class Regression_Test_Runner{
+{static} tags = "@RegressionTest
+}
+}
+
+CucumberSmokeTest --> Regression_Test_Runner
+CucumberRegressionTest --> Smoke_Test_Runner
+
+package FeatureFiles{
+package FK{}
+package GIP{}
+package HOR{}
+package IST{}
+package MED{}
+package VZIZ{}
+package ZOR{}
+
+package Smoke_Test{
+package FKa{
+
+class feautreFile{
+{static} @Smoketest @RegressionTest
+}
+}
+package VZIZa{
+class feautreFile{
+{static} @Smoketest @RegressionTest
+}
+}
+package GIPa{}
+package HORa{}
+package ISTa{}
+package MEDa{}
+package ZORa{}
+}
+}
+
+Runners --> Smoke_Test
+Smoke_Test_Runner --> FKa
+Smoke_Test_Runner --> VZIZa
+Regression_Test_Runner --> VZIZa
+
+
+package StepDefinitions{
+package FK{}
+package GIP{}
+package HOR{}
+package IST{}
+package MED{}
+package VZIZ{}
+package ZOR{}
+}
+
+package Pages{
+package FK{}
+package GIP{}
+package HOR{}
+package IST{}
+package MED{}
+package VZIZ{}
+package ZOR{}
+}
+XMLFiles --> Runners
+Runners --> FeatureFiles
+FeatureFiles --> StepDefinitions
+StepDefinitions --> Pages
+
+
+
+@enduml
