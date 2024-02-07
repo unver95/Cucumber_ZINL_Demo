@@ -5,6 +5,7 @@ import Utilities.Tools;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import java.time.LocalDate;
 
@@ -13,15 +14,27 @@ public class VZIZ_Main_Content_Steps {
     VZIZ_Landingspagina_Pages vlp = new VZIZ_Landingspagina_Pages();
 
     @And("Kijk of huidige jaar klopt")
-    public void klikOpTransparantiekalenderEnKijkOfHuidigeJaarKlopt(){
+    public void klikOpTransparantiekalenderEnKijkOfHuidigeJaarKlopt() {
         LocalDate datum = LocalDate.now();
         int huidigeJaar = datum.getYear();
+        int huidigeMaand = datum.getMonthValue();
 
-        System.out.println(huidigeJaar);
+        System.out.println(huidigeMaand + " " + huidigeJaar);
+
+
+        int jaarCheck =0;
+
+        if (huidigeMaand == 8){
+            jaarCheck = datum.getYear();
+            System.out.println("a");
+        }else {
+           jaarCheck= datum.getYear()-1;
+            System.out.println(jaarCheck);
+        }
 
         Select select = new Select(vlp.getVerslagjaar());
 
-        WebElement option=ts.findOptionContainsText_Tools(select,Integer.toString(huidigeJaar));
+        WebElement option = ts.findOptionContainsText_Tools(select, Integer.toString(huidigeJaar));
 
         ts.elementIsSelected_Tools(option);
 
