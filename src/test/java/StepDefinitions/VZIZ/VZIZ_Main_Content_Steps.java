@@ -13,7 +13,7 @@ public class VZIZ_Main_Content_Steps {
     Tools ts = new Tools();
     VZIZ_Landingspagina_Pages vlp = new VZIZ_Landingspagina_Pages();
 
-    @And("Kijk of huidige jaar klopt")
+    @And("Kijk of huidige jaar klopt") //TODO Sunuma ekle onemli
     public void klikOpTransparantiekalenderEnKijkOfHuidigeJaarKlopt() {
         LocalDate datum = LocalDate.now();
         int huidigeJaar = datum.getYear();
@@ -34,8 +34,9 @@ public class VZIZ_Main_Content_Steps {
 
         Select select = new Select(vlp.getVerslagjaar());
 
-        WebElement option = ts.findOptionContainsText_Tools(select, Integer.toString(huidigeJaar));
-
+        WebElement option = ts.findOptionContainsText_Tools(select, Integer.toString(jaarCheck));
+        System.out.println("asd");
+        System.out.println(option.getText());
         ts.elementIsSelected_Tools(option);
 
     }

@@ -92,7 +92,7 @@ public class GWD {
 
     public static boolean runningFromIntelij() { //TODO Sunuma ekle: Burda bakiyor intelij de mi calisiyor diye
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
