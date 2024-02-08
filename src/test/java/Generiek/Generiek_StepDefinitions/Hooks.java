@@ -26,6 +26,6 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", "screenshot naam");
         }
         ts.softAssertAll_Tools();
-        //GWD.quitDriver();
+        GWD.quitDriver();
     }
 }

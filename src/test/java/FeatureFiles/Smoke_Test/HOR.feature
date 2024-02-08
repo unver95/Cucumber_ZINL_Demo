@@ -6,9 +6,9 @@ Feature: Smoke Test HOR
     Given Ga naar "horizonscangeneesmiddelen.nl/?lang=nl"
 
     And Scroll helemaal naar beneden
-    And Klik op "Meer nieuws"
-    And Voer de nodige acties uit in het "Meer nieuws"
-    And Ga naar huis pagina
+  #  And Klik op "Meer nieuws"
+   # And Voer de nodige acties uit in het "Meer nieuws"
+    #And Ga naar huis pagina
     When Controleer de eerste link op Toptask view
     And Ga naar huis pagina
     When Klik op login

@@ -1,6 +1,6 @@
 #
-#Feature: Creëren
-#    Scenario: Dit is een Smoke test voor FK
+Feature: Creëren
+    Scenario: Dit is een Smoke test voor FK
 
 #
 #  Background:
