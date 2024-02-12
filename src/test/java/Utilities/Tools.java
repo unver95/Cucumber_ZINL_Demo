@@ -133,7 +133,7 @@ public class Tools extends GWD {
     //! Do stuff from DOM
     //****************************************************************************//
 
-    //? Klik de element op de DOM
+    //? Klik het element op de DOM
     // ** Gebruik dit niet. Dit is niet hoe de end user de site gebruikt
     public void clickElementFromDOM_Tools(WebElement element) {
         js = (JavascriptExecutor) getDriver();
@@ -152,16 +152,12 @@ public class Tools extends GWD {
                 js.executeScript("arguments[0].parentNode.removeChild(arguments[0]);", cookie);
                 break; // Eğer liste boşsa, döngüyü sonlandır
             }
-        } // TODO History den karslastir eskiyle try catch e de bak gerekir mi diye
+        }
     }
 
     //****************************************************************************//
     //! Click Methods
     //****************************************************************************//
-    //? In progress.. Wat die gaat doen is hij check op de DOM dat de element niet is
-    public boolean checkElementNotPresent_Tools(WebElement element) {
-        return element == null; //TODO Bu cok sacma oldu oncesini yazmamisiz mesela Assert yok. Silinsin mi bu Aysere sor...
-    }
 
     //? Wacht tot dat de element verschijnt en da wacht tot de element klikbaar is en dan klik op de element
     public void clickElement_Tools(WebElement element) {
@@ -210,8 +206,7 @@ public class Tools extends GWD {
         } /*catch (StaleElementReferenceException e) {
             //TODO
             System.out.println(e);
-            }*/
-        catch (Exception message) {
+            }*/ catch (Exception message) {
             System.out.println(message.getMessage());
             waitUntilElementToBeVisible_Tools(element);
             scrollToElement_Tools(element);
@@ -262,7 +257,7 @@ public class Tools extends GWD {
     }
 
     public void softAssertAll_Tools() {
-        softAssert.assertAll(); //TODO Daha sonar bakilmasi gerek. soft Assert mu yapacagiz yoksa normal assert mu kalmasi gerekiyor karar veremiyoruz. Soft assert yapmak en iyisi gibi ama yapamadik
+        softAssert.assertAll(); //TODO Daha sonar bakilmasi gerek. soft Assert mu yapacagiz yoksa normal assert mu kalmasi gerekiyor karar veremiyoruz. Soft assert yapmak en iyisi gibi ama yapamadik YOK EN IYISI DEGILMIS GELECEKTEKI KANKILER
     }
 
     public void colorCheckRGB(WebElement element, String colorCode) {
@@ -287,7 +282,7 @@ public class Tools extends GWD {
 
     //? Het maakt een element dank zij de partialLinkText, je hoeft niet al de text te schrijven
     public WebElement createElementByPartialLinkText(String txt) {
-        WebElement element = null;
+        WebElement element;
 
         try {
             element = GWD.getDriver().findElement(By.partialLinkText(txt));
@@ -342,20 +337,24 @@ public class Tools extends GWD {
         drpdwn.selectByValue(text);
     }
 
-    // TODO //?
+
+    // TODO FABIAN DO WHILE is ook de zelfde als Recursive
+    // TODO //? Eerst check die of de element de tekst bevat dat we gegeven hebben als het niet bevat stuurt die de tekst naar de element what we willen en dan kijk die nog een keer
     // TODO //!
     //TODO Ayser yazmasi anlatmasi gerek !object nedir ve "data-value" nedir diye
     public void recursiveFunction_Tools(WebElement element, String text) {
         //if(element.getAttribute("data-value") == null){
-        if (!Objects.equals(element.getAttribute("data-value"), text)) {
+        if (!Objects.equals(element.getAttribute("data-value"), text)) { //TODO Objects olma nedeni iki farkli obje yi karsilastirmak istedigimiz icin yaptik. element.getAttribute("data-value").equals(text) koyabilir miyiz dene
             sendKeysElement_Tools(element, text);
             recursiveFunction_Tools(element, text);
         } //TODO DO WHILE yap dev oyle dedi Sena yla konus
+
+
     }
 
-    //****************************************************************************//
-    //! Driver proces
-    //****************************************************************************//
+//****************************************************************************//
+//! Driver proces
+//****************************************************************************//
 
     //? Het verandert de tab van de browser
     public void switchNextTab() {
@@ -364,9 +363,9 @@ public class Tools extends GWD {
         }
     }
 
-    //****************************************************************************//
-    //! robotClass
-    //****************************************************************************//
+//****************************************************************************//
+//! robotClass
+//****************************************************************************//
 
     //? Hier bepaal je hoeveel keer je op Tab en op Enter wil kliken
     public void robotClass_TAB_ENTER(int TAB, int Enter) {
@@ -414,13 +413,13 @@ public class Tools extends GWD {
         robot.keyRelease(KeyEvent.VK_ENTER);
     }
 
-    //****************************************************************************//
-    //! Date & Time process
-    //****************************************************************************//
+//****************************************************************************//
+//! Date & Time process
+//****************************************************************************//
 
     //? Hier maakt die automatisch de datum van vandaag met Uur min en sec en jij zelf moet de ticket nummer schrijven, deze is handig wanneer we een document maken zo kunnen we de datums zien vanneer die gemaakt is
-    //! Je roep deze functie en schrijf de ticket nummer in voorbeeld ABO-1938 dan geneerdet die automatisch de datum tijd met de ticket nummer
-    // Hier onder maakt die een datum en tijd maar 1 keer per test en die datum kunnen we op onze document gebruiken dat we gaan uploaden.
+//! Je roep deze functie en schrijf de ticket nummer in voorbeeld ABO-1938 dan geneerdet die automatisch de datum tijd met de ticket nummer
+// Hier onder maakt die een datum en tijd maar 1 keer per test en die datum kunnen we op onze document gebruiken dat we gaan uploaden.
     private static String StaticDateTime = "";
 
     public static String dateTime(String ticketCode) {
@@ -438,12 +437,12 @@ public class Tools extends GWD {
         return ticketCode + " " + StaticDateTime;
     }
 
-    //****************************************************************************//
-    //! File process
-    //****************************************************************************//
+//****************************************************************************//
+//! File process
+//****************************************************************************//
 
     //? Hier kunnen we eindelijk de path van de documenten bepalen zonder op onze lokale PC te uploaden.
-    //! Je schrijft alleen de bestand naam met de file extensions voorbeeld Jinx.png
+//! Je schrijft alleen de bestand naam met de file extensions voorbeeld Jinx.png
     public String addFile(String bestanNaam) { // Alleen voor windows
         String folderName = "_Files";
         String fileName = bestanNaam;
@@ -455,6 +454,6 @@ public class Tools extends GWD {
         System.out.println("Bestand Path: " + fullPath);
         return fullPath;
     }
-    //TODO Log => log4J
+//TODO Log => log4J
 
 }

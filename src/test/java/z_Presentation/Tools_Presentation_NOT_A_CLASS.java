@@ -45,10 +45,6 @@ public class Tools_Presentation_NOT_A_CLASS extends GWD {
 
     }
 
-    public boolean checkElementNotPresent_Tools(WebElement element) {
-        return element == null; //TODO Bu cok sacma oldu oncesini yazmamisiz mesela Assert yok
-    }
-
     public void waitUntilElementDoesNotContainsText_Tools(WebElement element, String text) {
         wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element, text)));
     }
@@ -278,7 +274,7 @@ public class Tools_Presentation_NOT_A_CLASS extends GWD {
     }
 
     public void softAssertAll_Tools() {
-        softAssert.assertAll(); //TODO Daha sonar bakilmasi gerek. soft Assert mu yapacagiz yoksa normal assert mu kalmasi gerekiyor karar veremiyoruz. Soft assert yapmak en iyisi gibi ama yapamadik
+        softAssert.assertAll();
     }
 
     public String addFile(String bestanNaam) { // Alleen voor windows
@@ -332,10 +328,6 @@ public class Tools_Presentation_NOT_A_CLASS extends GWD {
 
         temp.waitUntilElementToBeInvisible_Tools();{
             //? Wacht tot de element niet zicht baar is voor de end user maar is zichtbaar op DOM
-        }
-
-        temp.checkElementNotPresent_Tools(){ //TODO In progress
-            //? In progress.. Wat die gaat doen is hij check op de DOM dat de element niet is
         }
 
         temp.waitUntilElementDoesNotContainsText_Tools(){
@@ -417,7 +409,7 @@ public class Tools_Presentation_NOT_A_CLASS extends GWD {
             //? Het krijgt het vervolgkeuzemenu en dankzij de getOptions-methode kunnen we alle opties van het WebElement één voor één oproepen en vervolgens controleren of de WebElement-tekst overeenkomt met wat we in het tweede argument hebben geschreven.
         }
 
-        temp.createElementByPartialLinkText(){ //TODO Aysere sor: bu ekran da cikan //a larin text mi
+        temp.createElementByPartialLinkText(){
             //? Het maakt een element dank zij de partialLinkText, je hoeft niet al de text te schrijven
         }
 
@@ -430,12 +422,12 @@ public class Tools_Presentation_NOT_A_CLASS extends GWD {
             //! Je moet eerst de element van de selecet schrijven en dan moet je schrijven welke text in de select je wild
         }
 
-        temp.selectByValueText_Tools(WebElement String){ //TODO Aysere sor: Burasi Value oldugu icin neden String de Int degil?
+        temp.selectByValueText_Tools(WebElement String){
             //? Hij selecteerd de value van de select
             //! Je moet eerst de element van de selecet schrijven en dan moet je schrijven welke value in de select je wild
         }
 
-        temp.recursiveFunction_Tools(WebElement String){ //TODO Ayser yazmasi anlatmasi gerek !object nedir ve "data-value" nedir diye
+        temp.recursiveFunction_Tools(WebElement String){
             // TODO //?
             // TODO //!
         }

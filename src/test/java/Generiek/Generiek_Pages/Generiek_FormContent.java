@@ -76,9 +76,9 @@ public class Generiek_FormContent {
     @FindBy(css = "[class=\"unchecked\"]")
     private List<WebElement> nieuwsbriefCheckBox;
     @FindBy(xpath = "//sup[@class=\"required\"]//following-sibling::input[@name=\"search-field\"]")
-    private WebElement zoekTrefwoord; //TODO Tam emin degiliz Ayserle takima sor bu burda mi olsun mu yoksa baska yerde mu diye
+    private WebElement zoekTrefwoord;
     @FindBy(xpath = "//*[@id=\"search-filters\"]/label[1]/select/option[text()='Alle vormen']")
     private WebElement searchVorm;
     @FindBy(xpath = "//fieldset//input[@name=\"trefwoord\"]")
-    private WebElement zoekTrefwoordVoorMedicijnkosten; //TODO Tam emin degiliz Ayserle takima sor bu burda mi olsun mu yoksa baska yerde mu diye
+    private WebElement zoekTrefwoordVoorMedicijnkosten;
 }

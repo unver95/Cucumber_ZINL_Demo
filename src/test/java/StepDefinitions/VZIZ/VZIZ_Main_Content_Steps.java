@@ -22,21 +22,17 @@ public class VZIZ_Main_Content_Steps {
         System.out.println(huidigeMaand + " " + huidigeJaar);
 
 
-        int jaarCheck =0;
+        int jaarCheck;
 
-        if (huidigeMaand == 8){
+        if (huidigeMaand >= 8){
             jaarCheck = datum.getYear();
-            System.out.println("a");
         }else {
            jaarCheck= datum.getYear()-1;
-            System.out.println(jaarCheck);
         }
 
         Select select = new Select(vlp.getVerslagjaar());
 
         WebElement option = ts.findOptionContainsText_Tools(select, Integer.toString(jaarCheck));
-        System.out.println("asd");
-        System.out.println(option.getText());
         ts.elementIsSelected_Tools(option);
 
     }

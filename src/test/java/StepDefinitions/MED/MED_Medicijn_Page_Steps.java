@@ -12,11 +12,11 @@ import org.openqa.selenium.WebElement;
 public class MED_Medicijn_Page_Steps {
     Tools ts = new Tools();
     MED_Main_Content mmc = new MED_Main_Content();
-    @And("Klik op de {int}. zoekresultaat die op search verschijnen is") //TODO !!!!!!!! BURAYA SENA BAKSIN !!!!!!!!
+    @And("Klik op de {int}. zoekresultaat die op search verschijnen is")
     public void klikOpDeMedicijnDieOpSearchVerschijnenIs(int hoeveelste) {
         ts.waitUntilSiteIsFullLoaded();
-        String xpath = String.format("//div[@id=\"result-list\"]/a[%d]", hoeveelste);
-        WebElement medicijn = GWD.getDriver().findElement(By.xpath(xpath));
+        String strXpath = String.format("//div[@id=\"result-list\"]/a[%d]", hoeveelste);
+        WebElement medicijn = GWD.getDriver().findElement(By.xpath(strXpath));
         ts.clickElement_Tools(medicijn);
     }
 

@@ -16,7 +16,7 @@ public class FK_Search_Steps {
 
     @And("Controleer voor FK of de search result op {string} bevat")
     public void controleerVoorFKOfDeSearchResultOpBevat(String searchCategory) {
-        try { //TODO Burda da Thread sleep var ancak oyle 100% calisiyor. Site neden se yavas o secekleri secerkene elimle yaptim dokunmaktik is laptopunda orda da takiliyordu yani kota sorun yok yada ben beceremedim bilmyiorum
+        try { //TODO Burda da Thread sleep var ancak oyle 100% calisiyor. Site neden se yavas o secekleri secerkene e[limle yaptim dokunmaktik is laptopunda orda da takiliyordu yani kota sorun yok yada ben beceremedim bilmyiorum
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
@@ -24,9 +24,7 @@ public class FK_Search_Steps {
         if (searchCategory.equalsIgnoreCase("geneesmiddelen")) {
             ts.waitUntilSiteIsFullLoaded();
             ts.waitUntilElementToBeVisible_Tools(fgn.getGeneesmiddelenSearchResultNumber());
-            if (!fgn.getFirstElementSearchResult().isDisplayed()) {
-                ts.waitUntilElementToBeVisible_Tools(fgn.getFirstElementSearchResult());
-            }
+            ts.waitUntilElementToBeVisible_Tools(fgn.getFirstElementSearchResult());
             ts.colorCheckRGB(fgn.getGeneesmiddelenSearchResultNumber(), "rgb(255, 0, 0)");
 
         } else if (searchCategory.equalsIgnoreCase("geneesmiddelgroepen")) {

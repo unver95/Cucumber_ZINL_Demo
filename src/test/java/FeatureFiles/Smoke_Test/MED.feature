@@ -13,7 +13,6 @@ Feature: Smoke Test MED
     And Zoek "Elvanse" op search
     Then Kies "20MG" van uit "sterkte"
    # And Kies de 2. select en dan kies out select "20MG"
-    And Kies "20MG" uit select
     And Klik op zoeken button op search pagina
     And Klik op de 1. zoekresultaat die op search verschijnen is
 

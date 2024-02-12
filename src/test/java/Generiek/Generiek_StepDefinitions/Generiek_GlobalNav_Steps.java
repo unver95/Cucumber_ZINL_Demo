@@ -56,7 +56,6 @@ public class Generiek_GlobalNav_Steps {
                 if (GWD.getDriver().getCurrentUrl().contains("medicijnkosten")) {
                     ts.sendKeysElement_Tools(gfc.getZoekTrefwoordVoorMedicijnkosten(), zoekText);
                 } else {
-                    System.out.println(123);
                     ts.sendKeysElement_Tools(gfc.getZoekTrefwoord(), zoekText);
                     ts.robot_Press_Enter_Tools();
                 }
@@ -81,13 +80,6 @@ public class Generiek_GlobalNav_Steps {
             ts.robot_Press_Enter_Tools();
         }
     }
-
-    @And("Kies {string} uit select")
-    //TODO Bunun Global Nav da isi ne baska yere koymak lazim bence // TODO Bide bu dinamik degil sadece tek bir yerde calisir "gfc.getSelectSterkte()" oldugu icin herkes le ortak degil bu
-    public void kiesUitSelect(String selectValue) {
-        ts.selectByVisibleText_Tools(gfc.getSelectSterkte(), selectValue);
-    }
-
 
 
  /*    @Then("Kies de {int}. select en dan kies out select {string}")
