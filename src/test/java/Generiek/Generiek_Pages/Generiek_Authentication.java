@@ -8,10 +8,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 @Getter
-public class Generiek_Login {
+public class Generiek_Authentication {
     Tools ts = new Tools();
     WebElement myElement;
-    public Generiek_Login() {
+    public Generiek_Authentication() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 

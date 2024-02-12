@@ -4,7 +4,6 @@ Feature: Smoke Test GIP
 
   Scenario: Dit is een Smoke test voor GIP
     Given Ga naar "gipdatabank.nl/"
-    #//TODO Acaba "Ga naar gip.nl" dedigimizde acaba browser i da mi yazak daha cok dinamik olur. Mesela "Ga naar ist.nl met Chrome/Brave/FireFox"
     And Scroll 0 unit naar boven en 1500 unit naar beneden
    # And Klik op "Meer nieuws"
     #And Voer de nodige acties uit in het "Meer nieuws"

@@ -4,7 +4,6 @@ Feature: Smoke Test VZIZ
 
   Scenario: Dit is een Smoke test voor VZIZ
     Given Ga naar "zorginzicht.nl/"
-    #//TODO Acaba "Ga naar vziz.nl" dedigimizde acaba browser i da mi yazak daha cok dinamik olur. Mesela "Ga naar ist.nl met Chrome/Brave/FireFox"
 #    When Klik op "Meer nieuws"
  #   Given Ga naar "zorginzicht.nl/"
     And Controleer de eerste link op Toptask view

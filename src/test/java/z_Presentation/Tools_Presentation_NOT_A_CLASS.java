@@ -1,5 +1,4 @@
 /*
-
 package z_Presentation;
 
 import Utilities.GWD;
@@ -354,7 +353,7 @@ public class Tools_Presentation_NOT_A_CLASS extends GWD {
         }
 
         temp.waitUntilElementToBeClickable_Tools(){
-            //? Wacht tot dat de element klikbaar
+            //? Wacht tot dat de element klikbaar IS
         }
 
         temp.waitUntilUrlContainsText(){
@@ -388,7 +387,8 @@ public class Tools_Presentation_NOT_A_CLASS extends GWD {
             // ** Gebruik dit niet. Dit is niet hoe de end user de site gebruikt
         }
 
-        temp.deleteCookieFromDOM_Tools(){            //? Delete de Cookie bar op de DOM
+        temp.deleteCookieFromDOM_Tools(){
+            //? Delete de Cookie bar op de DOM
             // ** De reden dat ik dit gebruik is om dat onze Cookie bar niet goed werkt
         }
 

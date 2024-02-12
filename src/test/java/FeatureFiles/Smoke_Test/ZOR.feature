@@ -4,7 +4,6 @@ Feature: Smoke Test ZOR
 
   Scenario: Dit is een Smoke test voor ZOR
     Given Ga naar "zorgcijfersdatabank.nl/"
-    #//TODO Acaba "Ga naar zor.nl" dedigimizde acaba browser i da mi yazak daha cok dinamik olur. Mesela "Ga naar ist.nl met Chrome/Brave/FireFox"
 
 #    And Klik op "Meer nieuws"
  #   And Ga naar huis pagina

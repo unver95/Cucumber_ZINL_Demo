@@ -55,7 +55,6 @@ public class Generiek_FormContent {
     @FindBy(css = "[name=\"reactie\"]")
     private WebElement reactieContactFormulier;
     @FindBy(xpath = "//label[@data-value=\"Test Naam\"]/following-sibling::fieldset//input[@value=\"Professional\"]//..")
-    //TODO SENA BAKSIN BU KODA: Bir suru fieldset oldugu icin istedigim seyin altinda kini alip ondan sonra onun uzerinde kini aldim
     private WebElement professionalContactFormulierRadioButton;
     @FindBy(css = "[value='Burger']")
     private WebElement priveContactFormulierRadioButton;

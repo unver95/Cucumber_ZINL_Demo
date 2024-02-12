@@ -1,10 +1,8 @@
 @Smoketest
 
 Feature: Smoke Test IST
-# //TODO FK ICIN TEKRARDAN TEST YAOILMASI GEREK YAPMAYI UNUTTUM O SITEYI
   Scenario:
     Given Ga naar "istandaarden.nl"
-    #//TODO Acaba "Ga naar ist.nl" dedigimizde acaba browser i da mi yazak daha cok dinamik olur. Mesela "Ga naar ist.nl met Chrome/Brave/FireFox"
     And Klik op "Meer nieuws"
     And Voer de nodige acties uit in het "Meer nieuws"
       # Burada bir sikinti var; nieuws larin kategorilerine teker teker tikladigimizda ve en bastaki yeni haberin tagini kontrol etmek istedigimizde her elementin kendine ozel locatori oldugunu goruyoruz. Bu nedenle genel kontrol mumkun degil.

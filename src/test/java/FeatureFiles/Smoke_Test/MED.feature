@@ -4,7 +4,6 @@ Feature: Smoke Test MED
 
   Scenario: Dit is een Smoke test voor MED
     Given Ga naar "medicijnkosten.nl/"
-    #//TODO Acaba "Ga naar med.nl" dedigimizde acaba browser i da mi yazak daha cok dinamik olur. Mesela "Ga naar ist.nl met Chrome/Brave/FireFox"
 
  #   And Klik op "Meer nieuws"
   #  And Voer de nodige acties uit in het "Meer nieuws"

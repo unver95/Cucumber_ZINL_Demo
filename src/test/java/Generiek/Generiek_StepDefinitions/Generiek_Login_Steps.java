@@ -2,7 +2,7 @@ package Generiek.Generiek_StepDefinitions;
 
 import Generiek.Generiek_Pages.Generiek_Header;
 import Generiek.Generiek_Pages.Generiek_HomePage;
-import Generiek.Generiek_Pages.Generiek_Login;
+import Generiek.Generiek_Pages.Generiek_Authentication;
 import Utilities.GWD;
 import Utilities.Tools;
 import io.cucumber.java.en.And;
@@ -15,7 +15,7 @@ public class Generiek_Login_Steps {
     String wachtwoord = "Welkom01!";
     String url = "https://www.";
     Tools ts = new Tools();
-    Generiek_Login gl = new Generiek_Login();
+    Generiek_Authentication ga = new Generiek_Authentication();
     Generiek_Header gh = new Generiek_Header();
     Generiek_HomePage ghp = new Generiek_HomePage();
 
@@ -50,18 +50,18 @@ public class Generiek_Login_Steps {
 
     @And("Enter de naam {string}")
     public void enterDeNaam(String naam) {
-        ts.sendKeysElement_Tools(gl.getUsernameGeneriek(), naam);
+        ts.sendKeysElement_Tools(ga.getUsernameGeneriek(), naam);
     }
 
     @And("Enter de wachtwoord")
     public void enterDeWachtwoord() {
-        ts.sendKeysElement_Tools(gl.getPasswordGeneriek(), wachtwoord);
+        ts.sendKeysElement_Tools(ga.getPasswordGeneriek(), wachtwoord);
     }
 
     @And("Klik op in log") // De log in knop op de log in pagina
     public void klikOpInLog() {
-        ts.clickElement_Tools(gl.getLoginGeneriek());
-      //ts.clickElementFromDOM_Tools(gl.getLoginGeneriek());
+        ts.clickElement_Tools(ga.getLoginGeneriek());
+      //ts.clickElementFromDOM_Tools(ga.getLoginGeneriek());
     }
 
     @Then("\\(Ingelogd als) moet zichtbaar zijn op de header")

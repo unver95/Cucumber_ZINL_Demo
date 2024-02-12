@@ -4,7 +4,6 @@ Feature: Smoke Test FK
 
   Scenario: Dit is een Smoke test voor FK
     Given Ga naar "farmacotherapeutischkompas.nl/"
-    #//TODO Acaba "Ga naar fk.nl" dedigimizde acaba browser i da mi yazak daha cok dinamik olur. Mesela "Ga naar ist.nl met Chrome/Brave/FireFox"...... Gelecekte ki burak yazdi bunu yapma cunku o zaman her sey icin tek tek degistirmek zorunda kalirsin ve daha zor olur
     And Klik op "Meer nieuws"
     And Voer de nodige acties uit in het "Meer nieuws"
     And Ga naar huis pagina

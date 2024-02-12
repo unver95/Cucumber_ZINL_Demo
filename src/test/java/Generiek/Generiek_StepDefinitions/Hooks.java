@@ -25,7 +25,7 @@ public class Hooks {
             final byte[] screenshot = ((TakesScreenshot) GWD.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", "screenshot naam");
         }
-        ts.softAssertAll_Tools();
+        ts.softAssertAll_Tools(); // Tum soft assertleri bu kisimda vereccek
         GWD.quitDriver();
     }
 }
