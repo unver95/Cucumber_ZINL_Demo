@@ -292,7 +292,7 @@ public class Tools extends GWD {
         return element;
     }
 
-    //? Je creat een element via ByLinkText
+    //? Je create een element via ByLinkText
     public WebElement createElementByLinkText(String txt) {
         WebElement element = null;
 
@@ -348,8 +348,6 @@ public class Tools extends GWD {
             sendKeysElement_Tools(element, text);
             recursiveFunction_Tools(element, text);
         } //TODO DO WHILE yap dev oyle dedi Sena yla konus
-
-
     }
 
 //****************************************************************************//
@@ -418,7 +416,7 @@ public class Tools extends GWD {
 //****************************************************************************//
 
     //? Hier maakt die automatisch de datum van vandaag met Uur min en sec en jij zelf moet de ticket nummer schrijven, deze is handig wanneer we een document maken zo kunnen we de datums zien vanneer die gemaakt is
-//! Je roep deze functie en schrijf de ticket nummer in voorbeeld ABO-1938 dan geneerdet die automatisch de datum tijd met de ticket nummer
+    // ! Je roep deze functie en schrijf de ticket nummer in voorbeeld ABO-1938 dan geneerdet die automatisch de datum tijd met de ticket nummer
 // Hier onder maakt die een datum en tijd maar 1 keer per test en die datum kunnen we op onze document gebruiken dat we gaan uploaden.
     private static String StaticDateTime = "";
 
@@ -438,11 +436,11 @@ public class Tools extends GWD {
     }
 
 //****************************************************************************//
-//! File process
+// ! File process
 //****************************************************************************//
 
     //? Hier kunnen we eindelijk de path van de documenten bepalen zonder op onze lokale PC te uploaden.
-//! Je schrijft alleen de bestand naam met de file extensions voorbeeld Jinx.png
+    //! Je schrijft alleen de bestand naam met de file extensions voorbeeld Jinx.png
     public String addFile(String bestanNaam) { // Alleen voor windows
         String folderName = "_Files";
         String fileName = bestanNaam;

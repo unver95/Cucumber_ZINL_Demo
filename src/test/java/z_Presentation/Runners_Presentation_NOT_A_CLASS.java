@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 
 public class Runners_Presentation_NOT_A_CLASS {
 
-    @AfterClass
+   // @AfterClass
     public static void writeExtentReport() {
         ExtentService.getInstance().setSystemInfo("Windows User Name", System.getProperty("user.name"));
         ExtentService.getInstance().setSystemInfo("Time Zone", System.getProperty("user.timezone"));

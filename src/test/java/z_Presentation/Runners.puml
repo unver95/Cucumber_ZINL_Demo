@@ -3,9 +3,13 @@
 
 
 package XMLFiles{
-class CucumberRegressionTest
+class CucumberRegressionTest{
+{static} <class name="Runners.Regression_Test_Runner"> </class>
+}
 note left: "xml"
-class CucumberSmokeTest
+class CucumberSmokeTest{
+{static} <class name="Runners.Smoke_Test_Runner"> </class>
+}
 note left: "xml"
 }
 
