@@ -90,6 +90,7 @@ package ZOR{}
 XMLFiles --> Runners
 Runners --> FeatureFiles
 FeatureFiles --> StepDefinitions
+Smoke_Test --> StepDefinitions
 StepDefinitions --> Pages
 
 

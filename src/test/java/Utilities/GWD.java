@@ -10,6 +10,7 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -102,7 +103,7 @@ public class GWD {
     }
 
 
-        public static void quitDriver() {
+    public static void quitDriver() {
         //TODO CMD den kapatma da mi yapsak burda herhalde su anda yok
         try {
             Thread.sleep(2000);
@@ -115,6 +116,11 @@ public class GWD {
             WebDriver driver = threadDriver.get();
             driver = null;
             threadDriver.set(driver);
+            try {
+                Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

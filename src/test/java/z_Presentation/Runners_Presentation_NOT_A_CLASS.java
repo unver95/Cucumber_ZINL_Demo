@@ -32,14 +32,6 @@ public class Runners_Presentation_NOT_A_CLASS {
     }
 
 
-
-
-
-
-
-
-
-
     //**************************************************************************************************\\
 
     // tags = "@SmokeTest" => Hier maak je tag je kan alles schrijven wat je wilt, ik heb een tag gemaakt
