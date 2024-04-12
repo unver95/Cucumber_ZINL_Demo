@@ -66,6 +66,7 @@ public class GWD {
                     break;
                 default: { /*Chrome*/
                     System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+                    System.setProperty("webdriver.chrome.driver", "D://Program Files//chromedriver-win64//chromedriver-win64//chromedriver.exe");
                     ChromeOptions optChrome = new ChromeOptions();
                     //   opt.setBinary("C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"); Deze en de bovenste zijn voor Brave browser
                     optChrome.addArguments("--lang=nl");
