@@ -86,6 +86,13 @@ public class Tools extends GWD {
         wait.until(ExpectedConditions.urlContains(urlText));
     }
 
+    //? TODO: BURAYA ACIKLAMA YAPILACAK
+    public void waitUntilElementsListSizeIs(By  byList,int size) {
+        wait.until(ExpectedConditions.numberOfElementsToBe(byList,size));
+    }
+    //? TODO: BURAYA ACIKLAMA YAPILACAK
+    public void waitUntilURLDoesNotContainsText(String urlText){wait.until(ExpectedConditions.not(ExpectedConditions.urlContains(urlText)));}
+
     //****************************************************************************//
     //! Scroll Methods
     //****************************************************************************//
@@ -338,7 +345,6 @@ public class Tools extends GWD {
     }
 
 
-    // TODO FABIAN DO WHILE is ook de zelfde als Recursive
     // TODO //? Eerst check die of de element de tekst bevat dat we gegeven hebben als het niet bevat stuurt die de tekst naar de element what we willen en dan kijk die nog een keer
     // TODO //!
     //TODO Ayser yazmasi anlatmasi gerek !object nedir ve "data-value" nedir diye
@@ -347,7 +353,7 @@ public class Tools extends GWD {
         if (!Objects.equals(element.getAttribute("data-value"), text)) { //TODO Objects olma nedeni iki farkli obje yi karsilastirmak istedigimiz icin yaptik. element.getAttribute("data-value").equals(text) koyabilir miyiz dene
             sendKeysElement_Tools(element, text);
             recursiveFunction_Tools(element, text);
-        } //TODO DO WHILE yap dev oyle dedi Sena yla konus
+        }
     }
 
 //****************************************************************************//

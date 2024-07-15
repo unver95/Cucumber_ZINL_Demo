@@ -67,7 +67,7 @@ public class Generiek_Beeldbank_Steps {
 
     @And("voeg een afbeelding")
     public void voegEenAfbeelding() {
-        ts.sendKeysElement_Tools(dc.getBijlageContactFormulier(), ts.addFile("Jinx.png"));
+        ts.sendKeysElement_Tools(dc.getBijlageContactFormulier(), ts.addFile("56MB.png"));
     }
 
     @And("Klik op Bewaren")

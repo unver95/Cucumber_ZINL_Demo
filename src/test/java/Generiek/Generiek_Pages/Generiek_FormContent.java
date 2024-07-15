@@ -30,7 +30,7 @@ public class Generiek_FormContent {
     private WebElement selectAuteursrecht;
     @FindBy(xpath = "//select[@name='sterkte']")
     private WebElement selectSterkte;
-    @FindBy(xpath = "//select[@name='sterkte']")
+    @FindBy(name = "S-auteur")
     private WebElement auteur;
     @FindBy(xpath = "//input[@name=\"S-bron\"]")
     private WebElement bron;

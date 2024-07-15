@@ -4,6 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.DevToolsException;
+import org.openqa.selenium.devtools.HasDevTools;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeDriverService;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -11,6 +14,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.io.IOException;
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -27,7 +31,7 @@ public class GWD {
         return GWD.threadBrowserName.get();
     }
 
-    public static WebDriver getDriver() {
+    public static WebDriver getDriver()  {
 
         Logger.getLogger("").setLevel(Level.SEVERE);
 
@@ -76,12 +80,12 @@ public class GWD {
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
-                    if (!runningFromIntelij()) {
-                        optChrome.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=7680,4320");
-                        System.out.println("Running from Jenkins");
-                    }
+            //        if (!runningFromIntelij()) {
+            //            optChrome.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=7680,4320");
+            //            System.out.println("Running from Jenkins");
+            //        }
                     threadDriver.set(new ChromeDriver(optChrome));
-                    System.out.println(runningFromIntelij());
+                  //  System.out.println(runningFromIntelij());
                 }
                 break;
             }
@@ -120,6 +124,15 @@ public class GWD {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+    }
+    public static DevTools getDevTools() {
+        WebDriver driver = getDriver();
+        if (driver instanceof HasDevTools) {
+            HasDevTools hasDevTools = (HasDevTools) driver;
+            return hasDevTools.getDevTools();
+        } else {
+            throw new UnsupportedOperationException("DevTools not supported for this browser");
         }
     }
 }

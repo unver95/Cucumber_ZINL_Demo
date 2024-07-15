@@ -13,7 +13,7 @@ import io.cucumber.java.en.When;
 public class Generiek_Login_Steps {
 
     String wachtwoord = "Welkom01!";
-    String url = "https://www.";
+    String url = "https://www-ts.";
     Tools ts = new Tools();
     Generiek_Authentication ga = new Generiek_Authentication();
     Generiek_Header gh = new Generiek_Header();

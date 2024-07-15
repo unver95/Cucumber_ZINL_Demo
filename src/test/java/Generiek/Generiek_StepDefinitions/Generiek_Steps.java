@@ -1,5 +1,6 @@
 package Generiek.Generiek_StepDefinitions;
 
+import Generiek.Generiek_Networking.NetworkAPIRequest;
 import Generiek.Generiek_Pages.*;
 import Utilities.GWD;
 import Utilities.Tools;
@@ -10,7 +11,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.List;
-import java.util.Set;
 
 
 public class Generiek_Steps {
@@ -208,5 +208,11 @@ public class Generiek_Steps {
     @And("Klik op Enter")
     public void klikOpEnter() {
     ts.robot_Press_Enter_Tools();
+    }
+
+    @And("Wacht {string} seconden")
+    public void wachtSeconden(String seconden) {
+        NetworkAPIRequest a = new NetworkAPIRequest();
+        a.APKRequestControl();
     }
 }
