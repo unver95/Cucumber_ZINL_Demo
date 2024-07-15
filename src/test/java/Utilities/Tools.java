@@ -31,6 +31,16 @@ public class Tools extends GWD {
     //! Wait Methods
     //****************************************************************************//
 
+    //Gebruik deze alleen waneer je op een request moet wachten
+    public void hardWait(int sec){
+        try {
+            System.out.println(sec);
+            Thread.sleep(sec);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     //? Wacht tot dat de website 100% geladen is. Het is goed om dit altijd te gebruiken, soms duurt element te lang om te laden die we eens niet nodig hebben.
     public void waitUntilSiteIsFullLoaded() {
         GWD.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

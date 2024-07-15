@@ -39,7 +39,7 @@ Feature: Beeldbank pagina
     And Als auteur zicht baar is schrijf de auteur naam
     And Schrijf de bron
     And voeg een afbeelding
-    And Wacht "10" seconden
+    And Wacht "30" seconden
 
     And Klik op Bewaren
     Then Kijk of de afbeelding fotolijst heeft en klik op de afbeelding

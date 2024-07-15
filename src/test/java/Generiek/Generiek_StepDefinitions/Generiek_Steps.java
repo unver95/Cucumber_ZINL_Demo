@@ -207,12 +207,18 @@ public class Generiek_Steps {
 
     @And("Klik op Enter")
     public void klikOpEnter() {
-    ts.robot_Press_Enter_Tools();
+        ts.robot_Press_Enter_Tools();
     }
 
     @And("Wacht {string} seconden")
-    public void wachtSeconden(String seconden) {
-        NetworkAPIRequest a = new NetworkAPIRequest();
-        a.APKRequestControl();
+    public void wachtSeconden(String strSeconden) throws InterruptedException {
+      /* NetworkAPIRequest a = new NetworkAPIRequest();
+        a.APKRequestControl(); Later mischien waneer onze APIs hebben*/
+        Tools ts = new Tools();
+        int sec;
+
+        sec = Integer.parseInt(strSeconden);
+        ts.hardWait(sec*1000);
+
     }
 }
