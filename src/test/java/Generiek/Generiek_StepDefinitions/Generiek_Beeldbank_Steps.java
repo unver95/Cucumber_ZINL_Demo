@@ -14,12 +14,13 @@ public class Generiek_Beeldbank_Steps {
     Tools ts = new Tools();
     Generiek_FormContent dc = new Generiek_FormContent();
     Generiek_Landingspagina_Pages glp = new Generiek_Landingspagina_Pages();
+   // Generiek_View_Steps gvs = new Generiek_View_Steps();
     public String titel = "titel van deze test demo";
     public String alternatieveTekst = "Alternative Text voor deze demo";
     public String cc = "Copyright";
     //public String tag = "abc";
-    public String auteurText = "Popis Sena";
-    public static List<String> tagNamesList;
+    public String auteurText = "Popis Sna";
+    //public static List<String> tagNamesList;
 
     @When("Schrijf de titel")
     public void schrijfDeTitel() {
@@ -33,8 +34,9 @@ public class Generiek_Beeldbank_Steps {
 
     @And("Voeg een tag toe")
     public void voegEenTagToe(DataTable dt) {
-        tagNamesList = dt.asList(String.class);
-        for (String tagName : tagNamesList) {
+       Generiek_View_Steps.tagEmptyNamesList = dt.asList(String.class);
+
+        for (String tagName : Generiek_View_Steps.tagEmptyNamesList) {
             ts.sendKeysElement_Tools(dc.getTagNieuweAfbeelding(), tagName);
             ts.clickElement_Tools(dc.getSelecteerDeEersteTag());
         }
@@ -67,7 +69,7 @@ public class Generiek_Beeldbank_Steps {
 
     @And("voeg een afbeelding")
     public void voegEenAfbeelding() {
-        ts.sendKeysElement_Tools(dc.getBijlageContactFormulier(), ts.addFile("56MB.png"));
+        ts.sendKeysElement_Tools(dc.getBijlageContactFormulier(), ts.addFile("Jinx.png"));
     }
 
     @And("Klik op Bewaren")

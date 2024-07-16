@@ -2,20 +2,21 @@ package Generiek.Generiek_StepDefinitions;
 
 import Generiek.Generiek_Pages.Generiek_View;
 import Utilities.Tools;
-import dev.failsafe.internal.util.Assert;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Generiek_View_Steps {
 
     Tools ts = new Tools();
     Generiek_View gv = new Generiek_View();
     Generiek_Beeldbank_Steps dbs = new Generiek_Beeldbank_Steps();
+    public static List<String> tagEmptyNamesList;
 
 
     @And("kijk of de Titel {string} heeft")
@@ -37,29 +38,12 @@ public class Generiek_View_Steps {
 
     @And("Kijk of de Tag correct staat")
     public void kijkOfDeTagCorrectStaat() {
+        List<String> tagSortedNamesList = tagEmptyNamesList.stream().sorted().collect(Collectors.toList());
+        Generiek_View gv = new Generiek_View();
         ts.waitUntilSiteIsFullLoaded();
-        List<String> viewTagsStr = new ArrayList<>();
-        List<String> tagNamesStr = new ArrayList<>(dbs.tagNamesList);
 
-        for (WebElement viewTag : gv.getViewTags()) {
-                viewTagsStr.add(viewTag.getText());
+        for (int i = 0; i < gv.getZieOokTagsList().size(); i++) {
+            ts.verifyElementContainsText_Tools(gv.getZieOokTagsList().get(i), tagSortedNamesList.get(i));
         }
-
-        Collections.sort(tagNamesStr);
-        System.out.println(viewTagsStr);
-        System.out.println(tagNamesStr);
-        Assert.isTrue(viewTagsStr.equals(tagNamesStr), "Is not equal");
-
-/*
-        for (int i = 0; i < gv.getViewTags().size(); i++) {
-            System.out.println(tagNamesList);
-            System.out.println(tagNamesList.get(i));
-            System.out.println(gv.getViewTags().get(i).getText());
-            ts.verifyElementContainsText_Tools(gv.getViewTags().get(i), tagNamesList.get(i));
-        }*/
-
-       /*     for(String tagName: tagNamesList){
-                Assert.isTrue(gv.getViewTags().contains(tagName),"It doesnt contains");
-            }*/
     }
 }

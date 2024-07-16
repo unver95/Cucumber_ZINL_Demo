@@ -24,6 +24,7 @@ public class Generiek_Steps {
     @Given("Klik op {string}")
     public void klikOp(String strElement) {
         ts.waitUntilSiteIsFullLoaded();
+
         if (strElement.contains("Contact")) {
             ts.scrollBrowserAllTheWayDown();
         }
@@ -215,10 +216,7 @@ public class Generiek_Steps {
       /* NetworkAPIRequest a = new NetworkAPIRequest();
         a.APKRequestControl(); Later mischien waneer onze APIs hebben*/
         Tools ts = new Tools();
-        int sec;
-
-        sec = Integer.parseInt(strSeconden);
-        ts.hardWait(sec*1000);
-
+        int sec = Integer.parseInt(strSeconden);
+        ts.hardWait(sec * 1000);
     }
 }

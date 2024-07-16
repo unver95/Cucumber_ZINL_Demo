@@ -4,7 +4,6 @@ import io.cucumber.java.en.And;
 
 import Generiek.Generiek_Pages.Generiek_Toolbar;
 import Utilities.Tools;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
 public class Generiek_Toolbar_Steps {
@@ -29,6 +28,6 @@ public class Generiek_Toolbar_Steps {
     @And("Klik op publiceer nu")
     public void klikOpPubliceerNu() {
         ts.waitUntilSiteIsFullLoaded();
-        ts.clickElement_Tools(gt.getPubliceerNu());
+        ts.clickElement_Tools(gt.getPubliceer());
     }
 }

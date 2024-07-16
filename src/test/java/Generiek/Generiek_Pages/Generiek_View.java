@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.xml.xpath.XPath;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,10 +22,10 @@ public class Generiek_View {
     private WebElement viewAlternativeText;
     @FindBy(xpath = "//small[contains(@class,\"copyright-mention\")]")
     private WebElement viewCredit;
-    @FindBy(xpath = "//*[@id=\"SECT-ZIEOOK\"]/ul/li/a/h4")
-    private List<WebElement> viewTags;
     @FindBy(id = "page-head")
     private WebElement paginaTitel;
+    @FindBy(xpath= "//div[@class=\"page-module type-links\"]/ul/li/a/p[text()=\"Tag\"]/../h4")
+    private List<WebElement> zieOokTagsList;
 
 /*    public WebElement getViewTitel() {
         return viewTitel;

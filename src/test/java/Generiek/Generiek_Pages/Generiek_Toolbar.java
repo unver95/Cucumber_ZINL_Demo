@@ -21,10 +21,10 @@ public class Generiek_Toolbar {
     @FindBy(xpath = "//div[@class=\"tippy-content\"]")
     private WebElement tippyBox;
 
-    @FindBy(xpath = "//select[@name=\"versie\"]")
+    @FindBy(xpath = "//div[@class=\"toolbar-section view-options\"]/a")
     private WebElement concept;
     @FindBy(xpath = "//button[@id=\"modal-main-submit\"]")
-    private WebElement publiceerNu;
+    private WebElement publiceer;
 
 /*    public WebElement getPlusWithText() {
         return plusWithText;
